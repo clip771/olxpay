@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout PIX Profissional</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        margin: 0;
+        padding: 10px 12px;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto 8px auto;
+        width: 70px;
+        height: auto;
+    }
+
+    .titulo {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 4px;
+    }
+
+    .subtitulo {
+        text-align: center;
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    /* Cartão de valor */
+    .cartao-valor {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 12px;
+        text-align: center;
+        margin: 0 auto 12px auto;
+        max-width: 280px;
+    }
+
+    .cartao-valor .descricao {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 6px;
+    }
+
+    .cartao-valor .valor {
+        font-size: 24px;
+        font-weight: 600;
+        color: #FF5722;
+    }
+
+    .info-extra {
+        font-size: 11px;
+        color: #777;
+        margin-top: 4px;
+    }
+
+    .id-transacao {
+        font-size: 10px;
+        color: #999;
+        margin-top: 2px;
+    }
+
+    .tempo-expiracao {
+        font-size: 12px;
+        color: #E64A19;
+        text-align: center;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    /* QR Code */
+    .qr-code {
+        display: block;
+        margin: 10px auto 10px auto;
+        max-width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Caixa do código PIX */
+    .pix-box {
+        background: #fff;
+        border-radius: 10px;
+        padding: 8px;
+        max-width: 280px;
+        margin: 0 auto 10px auto;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    .pix-box small {
+        display: block;
+        font-size: 11px;
+        color: #555;
+        margin-bottom: 4px;
+    }
+
+    .codigo-pix {
+        width: 100%;
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        text-align: center;
+        overflow-x: auto;     /* rolagem horizontal */
+        white-space: nowrap;   /* mantém em uma linha */
+        background-color: #fff;
+        box-sizing: border-box;
+        cursor: text;
+    }
+
+    /* Botão copiar */
+    .botao-copiar {
+        background: linear-gradient(90deg, #FF5722, #E64A19);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto 6px auto;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .botao-copiar:hover { opacity: 0.9; }
+
+    .texto-normal {
+        font-size: 11px;
+        color: #555;
+        text-align: center;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+</style>
+</head>
+<body>
+
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <div class="titulo">Pagamento via PIX</div>
+    <div class="subtitulo">Transação segura e instantânea</div>
+
+    <!-- Cartão de valor -->
+    <div class="cartao-valor">
+        <div class="descricao">Taxa de Ativação</div>
+        <div class="valor">R$ 199,00</div>
+        <div class="info-extra">Válido até: 03/01/2026 23:59</div>
+        <div class="id-transacao">ID: #TX12345678</div>
+    </div>
+
+    <div class="tempo-expiracao">⏳ Expira em 15 minutos</div>
+
+    <!-- QR Code -->
+    <img src="qrcode.png" alt="QR Code PIX" class="qr-code">
+
+    <!-- Código PIX -->
+    <div class="pix-box">
+        <small>Código PIX (copiar e colar)</small>
+        <div id="pixCodigo" class="codigo-pix">
+            00020126580014BR.GOV.BCB.PIX0114+5511999999995204000053039865404199,00
+        </div>
+    </div>
+
+    <!-- Botão copiar -->
+    <button class="botao-copiar" onclick="copiarPIX()">📋 Copiar Código PIX</button>
+
+    <div class="texto-normal">Abra seu app de banco ou carteira digital, cole o código ou escaneie o QR Code para pagar.</div>
+    <div class="texto-normal">O pagamento será confirmado automaticamente em até 5 minutos.</div>
+
+    <script>
+        function copiarPIX() {
+            const pixDiv = document.getElementById('pixCodigo');
+            const range = document.createRange();
+            range.selectNode(pixDiv);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            document.execCommand('copy');
+            sel.removeAllRanges();
+            alert('Código PIX copiado para a área de transferência!');
+        }
+    </script>
+
+</body>
+</html>

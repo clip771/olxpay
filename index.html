@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 120px;
+            height: auto;
+        }
+
+        .titulo {
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .texto-normal {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .caixa-azul {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .caixa-azul i {
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .texto-negrito {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .valor-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .valor-box small {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .valor-box .valor {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .botao-pagamento {
+            background-color: orange;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .botao-pagamento:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <!-- Título -->
+    <div class="titulo">Título da Página</div>
+
+    <!-- Texto abaixo do título -->
+    <div class="texto-normal">Texto explicativo ou informativo abaixo do título.</div>
+
+    <!-- Caixa azul com cadeado -->
+    <div class="caixa-azul">
+        <i>🔒</i>
+        <span>Pagamento seguro protegido</span>
+    </div>
+
+    <!-- Texto negrito abaixo -->
+    <div class="texto-negrito">Informação Importante</div>
+
+    <!-- Texto normal abaixo -->
+    <div class="texto-normal">Detalhes adicionais ou explicações complementares.</div>
+
+    <!-- Caixa de valor -->
+    <div class="valor-box">
+        <small>Valor a pagar</small>
+        <div class="valor">R$ 199,99</div>
+    </div>
+
+    <!-- Botão de pagamento -->
+    <button class="botao-pagamento">Prosseguir com Pagamento</button>
+
+</body>
+</html>
